@@ -6,9 +6,8 @@ const [chartData, setChartData] = createSignal({});
 
 createEffect(() => {
   const fetchData = async () => {
-    const res = await fetch("https://api.coincap.io/v2/assets/?limit=5")
-    const json = await res.json();
-    const data = json.data;
+    const res = await fetch("http://api.openweathermap.org/geo/1.0/direct?q=London&limit=5&appid=2c36818bb5ca9e829313dd736fd15859")
+    const data = await res.json();
 
     setChartData({
       type: "bar",
@@ -16,7 +15,7 @@ createEffect(() => {
         labels: data.map((d) => d.name),
         datasets: [
           {
-            label: "Crypto Price in USD",
+            label: "Latitudes in London",
             backgroundColor: [
               "#0d6efd",
               "#28a745",
@@ -25,7 +24,7 @@ createEffect(() => {
               "#17a2b8",
 
             ],
-            data: data.map((d) => (d.priceUsd))
+            data: data.map((d) => (d.lat))
           }
         ]
       }
