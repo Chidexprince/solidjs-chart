@@ -1,27 +1,11 @@
-import SolidChart from "solid-chart.js";
 import { chartData } from '../App';
+import { SolidApexCharts } from 'solid-apexcharts';
 
 
 function Charts() {
 
   return (
-    <>
-
-      {chartData() &&
-        <SolidChart
-
-          {...chartData()}
-
-          canvasOptions={{
-            width: 200,
-            height: 150
-          }}
-        />
-
-
-      }
-
-    </>
+    <SolidApexCharts width="800" type="bar" options={chartData()}  />
   );
 }
 
