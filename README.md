@@ -1,2 +1,2 @@
 # solidjs-chart
-Data visualization with chartjs in SolidJS
+Data visualization with apexcharts.js in SolidJS
